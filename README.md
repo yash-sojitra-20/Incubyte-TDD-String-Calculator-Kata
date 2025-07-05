@@ -25,7 +25,7 @@ Make sure you have Java (17+) and Maven installed.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/Incubyte-TDD-String-Calculator-Kata.git
+   git clone https://github.com/yash-sojitra-20/Incubyte-TDD-String-Calculator-Kata.git
    cd Incubyte-TDD-String-Calculator-Kata
    ````
 2. Build and run tests:
@@ -33,6 +33,52 @@ Make sure you have Java (17+) and Maven installed.
    ```bash
    mvn clean test
    ```
+
+---
+
+## 🤔 Why is there no `main()` method?
+
+This project is built using **Test-Driven Development (TDD)** where requirements are expressed as automated unit tests.
+
+* In TDD, the tests themselves are the entry point: JUnit runs each `@Test` method without needing a `main()` method.
+* This is intentional: for libraries or katas, you don’t need a standalone entry point.
+* However, if you’d like to manually test your calculator outside of the tests, you can absolutely add a `Main` class.
+
+---
+
+## 🛠️ Optional Main Method
+
+Here’s how you can add a `Main.java` file to manually run your calculator:
+
+**Folder structure:**
+
+```
+src/
+└── main/
+    └── java/com/example/calculator/
+        ├── StringCalculator.java
+        ├── StringCalculatorImpl.java
+        └── Main.java   ← create this file here
+```
+
+**Main.java example:**
+
+```java
+package com.example.calculator;
+
+public class Main {
+    public static void main(String[] args) {
+        StringCalculator calculator = new StringCalculatorImpl();
+
+        String input = "1,2,3";
+        int result = calculator.add(input);
+
+        System.out.println("Sum of \"" + input + "\" is: " + result);
+    }
+}
+```
+
+You can run it directly in IntelliJ (right-click → Run Main.main()) or via Maven if you set up an execution plugin.
 
 ---
 
@@ -70,9 +116,12 @@ src/
 ```
 
 ---
+---
 
 ## 👨‍💻 Author
 
 **<Yash_Sojitra>**
-Feel free to connect on [LinkedIn](https://www.linkedin.com/in/yash-sojitra-918107256)!
 
+<a href="https://www.linkedin.com/in/yash-sojitra-918107256/" target="_blank">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="24" />
+</a>
