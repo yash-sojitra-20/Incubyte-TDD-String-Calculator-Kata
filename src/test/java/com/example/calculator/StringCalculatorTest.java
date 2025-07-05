@@ -69,5 +69,11 @@ public class StringCalculatorTest {
         assertEquals(1002, calculator.add("2,1000"));
     }
 
+    @Test
+    public void testDelimiterOfAnyLength() {
+        StringCalculator calculator = new StringCalculatorImpl();
+        assertEquals(6, calculator.add("//[***]\n1***2***3"));
+        assertEquals(10, calculator.add("//[abc]\n1abc2abc3abc4"));
+    }
 
 }
