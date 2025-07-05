@@ -16,6 +16,11 @@ Implement a `StringCalculator` class with an `add(String numbers)` method that:
   - Newlines (`\n`) as additional delimiters
   - Custom delimiters defined in the format `//[delimiter]\n[numbers...]`
   - Throws an exception listing all negative numbers if any are present
+ 
+- Advanced steps from the full TDD String Calculator Kata:
+  - **Ignore numbers greater than 1000:** e.g., `2,1001` returns `2`.
+  - **Delimiters of any length:** e.g., `//[***]\n1***2***3` returns `6`.
+  - **Multiple custom delimiters of any length:** e.g., `//[*][%]\n1*2%3` or `//[***][%%]\n1***2%%3` both return `6`.
 
 ---
 
@@ -91,6 +96,12 @@ You can run it directly in IntelliJ (right-click → Run Main.main()) or via Mav
 * ✔️ Supports both commas and newlines as delimiters
 * ✔️ Supports custom single-character delimiters specified with `//[delimiter]\n`
 * ✔️ Throws an exception with a list of negative numbers
+
+## 🚀 Advanced Features Implemented
+
+* ✔️ Ignores numbers greater than 1000 (e.g., `2,1001` returns `2`)
+* ✔️ Supports delimiters of any length, like `//[***]\n1***2***3`
+* ✔️ Supports multiple custom delimiters of any length, like `//[*][%]\n1*2%3` or `//[***][%%]\n1***2%%3`
 
 ---
 
