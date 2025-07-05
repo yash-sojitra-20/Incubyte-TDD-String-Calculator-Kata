@@ -34,5 +34,12 @@ public class StringCalculatorTest {
         assertEquals(150, calculator.add("10,20,30,40,50"));
     }
 
+    @Test
+    public void testNumbersSeparatedByNewlinesAndCommas() {
+        StringCalculator calculator = new StringCalculatorImpl();
+        assertEquals(6, calculator.add("1\n2,3"));
+        assertEquals(15, calculator.add("4\n5\n6"));
+        assertEquals(21, calculator.add("7,8\n6"));
+    }
 
 }
