@@ -19,4 +19,12 @@ public class StringCalculatorTest {
         assertEquals(42, calculator.add("42"));
     }
 
+    @Test
+    public void testTwoNumbersReturnsTheirSum() {
+        StringCalculator calculator = new StringCalculatorImpl();
+        assertEquals(3, calculator.add("1,2"));
+        assertEquals(9, calculator.add("4,5"));
+    }
+
+
 }
