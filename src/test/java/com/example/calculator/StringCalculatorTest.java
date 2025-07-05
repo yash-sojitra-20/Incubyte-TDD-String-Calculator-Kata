@@ -42,4 +42,12 @@ public class StringCalculatorTest {
         assertEquals(21, calculator.add("7,8\n6"));
     }
 
+    @Test
+    public void testCustomDelimiter() {
+        StringCalculator calculator = new StringCalculatorImpl();
+        assertEquals(3, calculator.add("//;\n1;2"));
+        assertEquals(9, calculator.add("//*\n2*3*4"));
+        assertEquals(8, calculator.add("//#\n2#3#3"));
+    }
+
 }
