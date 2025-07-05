@@ -1,6 +1,9 @@
 package com.example.calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class StringCalculatorImpl implements StringCalculator {
 
@@ -23,12 +26,26 @@ public class StringCalculatorImpl implements StringCalculator {
 
         String[] parts = numbers.split(delimiter);
         int sum = 0;
+        List<Integer> negatives = new ArrayList<>();
         for (String part : parts) {
             if (!part.isEmpty()) {
-                sum += Integer.parseInt(part.trim());
+                int num = Integer.parseInt(part.trim());
+                if (num < 0) {
+                    negatives.add(num);
+                }
+                sum += num;
             }
         }
+
+        if (!negatives.isEmpty()) {
+            throw new IllegalArgumentException("negative numbers not allowed: " +
+                    negatives.stream()
+                            .map(String::valueOf)
+                            .collect(Collectors.joining(", ")));
+        }
+
         return sum;
+
     }
 
 
